@@ -1,0 +1,8 @@
+# Generalização entre competições — seção 2.2.8
+partitions:
+  - {name: club_to_national, fit: {category: club},     eval: {category: national}}
+  - {name: national_to_club, fit: {category: national}, eval: {category: club}}
+  - {name: male_to_female,   fit: {gender: male},       eval: {gender: female}}
+  - {name: female_to_male,   fit: {gender: female},     eval: {gender: male}}
+seed: 42
+internal_eval_fraction: 0.25

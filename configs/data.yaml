@@ -1,0 +1,65 @@
+# ============================================================
+# Composição do corpus — StatsBomb Open Data
+# ============================================================
+# Lista revisada a partir do outputs/tables/coverage_report.csv
+# (saída real de scripts/00_discover.py). Critério: cobertura completa
+# da competição-temporada (seção 2.2.2). Entradas marcadas "quase
+# completa" faltam 1-2 partidas do esperado (provável ausência pontual
+# no acervo, não erro de filtro) — declarar isso na Tabela 1 do TCC.
+#
+# EXCLUÍDAS por cobertura parcial (verificado no discover):
+# Bundesliga (34 jogos = um time só, não a liga), MLS 2023 (6 jogos),
+# Champions League (1 jogo/temporada = só finais), Copa del Rey,
+# Liga Profesional Argentina, Europa League, FIFA U20, FA WSL 2018/19
+# e 2019/20 (abaixo do esperado para 12 times).
+
+competitions:
+  # ---- Seleções masculinas (completas) ----
+  - {competition_id: 43,   season_id: 106, label: "WC2022",    category: national, gender: male}
+  - {competition_id: 43,   season_id: 3,   label: "WC2018",    category: national, gender: male}
+  - {competition_id: 55,   season_id: 282, label: "EURO2024",  category: national, gender: male}
+  - {competition_id: 55,   season_id: 43,  label: "EURO2020",  category: national, gender: male}
+  - {competition_id: 223,  season_id: 282, label: "COPAM2024", category: national, gender: male}
+  - {competition_id: 1267, season_id: 107, label: "AFCON2023", category: national, gender: male}
+
+  # ---- Seleções femininas (completas) ----
+  - {competition_id: 72,  season_id: 107, label: "WWC2023",   category: national, gender: female}
+  - {competition_id: 72,  season_id: 30,  label: "WWC2019",   category: national, gender: female}
+  - {competition_id: 53,  season_id: 315, label: "WEURO2025", category: national, gender: female}
+  - {competition_id: 53,  season_id: 106, label: "WEURO2022", category: national, gender: female}
+
+  # ---- Ligas de clubes masculinas (completas) ----
+  - {competition_id: 11,   season_id: 27,  label: "LALIGA1516", category: club, gender: male}
+  - {competition_id: 2,    season_id: 27,  label: "EPL1516",    category: club, gender: male}
+  - {competition_id: 12,   season_id: 27,  label: "SERIEA1516", category: club, gender: male}
+  - {competition_id: 7,    season_id: 27,  label: "LIGUE1_1516", category: club, gender: male}
+  - {competition_id: 1238, season_id: 108, label: "ISL2122",   category: club, gender: male}
+
+  # ---- Ligas de clubes femininas (completas ou quase) ----
+  - {competition_id: 37,  season_id: 281, label: "FAWSL2324",   category: club, gender: female}
+  - {competition_id: 37,  season_id: 90,  label: "FAWSL2021",   category: club, gender: female}  # quase completa: 131/132
+  - {competition_id: 49,  season_id: 107, label: "NWSL2023",    category: club, gender: female}
+  - {competition_id: 135, season_id: 281, label: "FBUND2324",   category: club, gender: female}
+  - {competition_id: 182, season_id: 281, label: "LIGAF2324",   category: club, gender: female}
+  - {competition_id: 131, season_id: 281, label: "SERIEAW2324", category: club, gender: female}  # quase completa: 130/132
+
+preprocessing:
+  drop_missing_coords: true
+  drop_out_of_bounds: true
+  drop_missing_player: true
+  exclude_periods: [5]     # 5 = disputa de pênaltis; prorrogação (3, 4) mantida
+  # [AJUSTAR E JUSTIFICAR] 270 min = 3 partidas completas. Provisório.
+  min_minutes: 270
+  # Goleiros: o xT quase não valora ações de GK, o que produz ranking
+  # ruidoso e correlação negativa com o VAEP nesse grupo. Excluí-los é
+  # decisão metodológica — se true, registrar na seção 2.2.2.
+  exclude_goalkeepers: false
+
+# Split por partida, estratificado por competição. NUNCA por evento.
+split:
+  eval_fraction: 0.25
+  seed: 42
+
+paths:
+  raw: data/raw
+  processed: data/processed

@@ -1,0 +1,9 @@
+,0
+python,3.12.7
+platform,Windows-11-10.0.26200-SP0
+cpu,"AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD"
+numpy,1.26.4
+pandas,2.3.3
+xgboost,3.4.1
+socceraction,1.5.3
+sklearn,1.9.0

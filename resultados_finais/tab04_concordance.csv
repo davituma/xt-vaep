@@ -1,0 +1,8 @@
+,spearman,top_k_overlap,median_rank_shift,n_players,spearman_lo,spearman_hi,top_k_overlap_lo,top_k_overlap_hi,median_rank_shift_lo,median_rank_shift_hi
+xT vs VAEP,0.4569608578873626,0.15,416.5,2316.0,0.43100627059732666,0.4836985243050972,0.05,0.2,249.7375,273.0
+xT vs gols+assist,0.2517931276909949,,,,,,,,,
+VAEP vs gols+assist,0.6306208210532183,,,,,,,,,
+xT vs chutes,0.30491775705347507,,,,,,,,,
+VAEP vs chutes,0.38344569885759805,,,,,,,,,
+xT vs volume,0.526019684680268,,,,,,,,,
+VAEP vs volume,0.33146657978221805,,,,,,,,,

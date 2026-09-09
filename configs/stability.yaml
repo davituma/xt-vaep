@@ -1,0 +1,12 @@
+# Curvas de estabilidade — seção 2.2.7
+# run_all.py ajusta sample_sizes automaticamente ao pool de ajuste
+# (potências de 2 até o pool, mais o pool inteiro se o último ponto ficar
+# >25% abaixo). Para controlar à mão: run_all.py --no-auto-sizes.
+sample_sizes: [8, 16, 32, 64, 128, 256, 512, 1024, 2048]
+n_repetitions: 5
+seed: 42
+
+metrics:
+  top_k: 20
+  bootstrap_samples: 500
+  bootstrap_seed: 42

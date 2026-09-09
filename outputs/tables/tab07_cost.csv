@@ -1,0 +1,9 @@
+stage,runs,total_s,mean_s,max_rss_mb
+build_corpus,1.0,57.3,57.3,2454.0
+compare,1.0,172.1,172.1,7074.9
+fit_vaep,1.0,151.3,151.3,6447.3
+generalization,4.0,1039.4,259.8,6944.6
+stability_point,45.0,2474.0,55.0,8496.6
+stability_reference,1.0,178.2,178.2,7784.7
+vaep_features,1.0,343.0,343.0,5176.9
+TOTAL,54.0,4415.3,,8496.6

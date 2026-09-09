@@ -1,0 +1,20 @@
+# Expected Threat — Singh (2019), seção 2.2.4
+grid:
+  n_cols: 12
+  n_rows: 8
+
+solver:
+  max_iterations: 200
+  tolerance: 1.0e-6
+
+# Tratamento de células esparsas (A.0 item 4). Suavização aditiva nas
+# probabilidades por célula. alpha=0 desliga. Fixado antes da execução
+# e mantido constante em todos os pontos das curvas.
+sparse_cells:
+  strategy: additive       # additive | none
+  alpha: 1.0
+  min_count_report: 30     # só afeta o diagnóstico N(z), não o cálculo
+
+# Mesma definição da implementação de referência (socceraction), para comparabilidade
+move_types: [pass, cross, dribble]
+shot_types: [shot]

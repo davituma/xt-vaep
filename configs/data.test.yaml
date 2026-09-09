@@ -1,0 +1,8 @@
+# CONFIG DE TESTE (2 competições). A completa está em data.yaml.full
+competitions:
+  - {competition_id: 223, season_id: 282, label: "COPAM2024", category: national, gender: male}
+  - {competition_id: 55,  season_id: 282, label: "EURO2024",  category: national, gender: male}
+  - {competition_id: 53,  season_id: 106, label: "WEURO2022", category: national, gender: female}
+preprocessing: {drop_missing_coords: true, drop_out_of_bounds: true, drop_missing_player: true, exclude_periods: [5], min_minutes: 180}
+split: {eval_fraction: 0.25, seed: 42}
+paths: {raw: data/raw, processed: data/processed}
