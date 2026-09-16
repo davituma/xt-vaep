@@ -41,6 +41,7 @@ STEPS = [
     ("curves",   "scripts/06_stability_curves.py",             "curvas de estabilidade, Tabela 5, Fig. 6-10"),
     ("gen",      "scripts/07_generalization.py",               "generalização entre competições, Tabela 6"),
     ("cases",    "scripts/08_case_studies.py",                 "estudos de caso, Fig. 11"),
+    ("lookup",   "scripts/10_lookup_players.py --report",      "validação de construto por jogador, Tabela 8"),
     ("cost",     "scripts/09_cost_report.py",                  "Tabela 7 + ambiente"),
 ]
 NAMES = [s[0] for s in STEPS]

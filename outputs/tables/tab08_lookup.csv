@@ -1,0 +1,47 @@
+grupo,player_name,position,games,minutes,xt_p90,rank_xt,vaep_p90,rank_vaep,gap,ga_total
+maior divergência,Nikola Karczewska,Center Forward,6,381,0.013063944063479,2163,0.939485130505728,8,2155,5.0
+maior divergência,Jill Roord,Left Center Midfield,14,965,-0.0351063784562308,2302,0.6352822999233161,33,2269,7.0
+maior divergência,Deyverson Brum Silva Acosta,Right Center Forward,8,484,0.0081171087271437,2214,0.5473316052029235,50,2164,5.0
+maior divergência,Sophie Weidauer,Right Center Forward,6,554,0.0079248290455019,2216,0.5068401182911444,72,2144,4.0
+maior divergência,Sheila Guijarro Gómez,Center Forward,7,495,-0.0248098875482917,2294,0.5031753557903523,75,2219,4.0
+maior divergência,Mario Mandžukić,Left Center Forward,4,354,-0.0476019818402648,2311,0.4864761480145053,81,2230,3.0
+maior divergência,Ana Marcos Moral,Center Forward,8,542,-0.0498759390350919,2313,0.4749255783314004,86,2227,4.0
+maior divergência,Kayla McCoy,Center Forward,8,706,-0.016588878982902,2289,0.3750113851728647,192,2097,4.0
+maior divergência,Felipe Salvador Caicedo Corozo,Center Forward,6,354,0.0012437581095691,2254,0.3503868927004139,223,2031,2.0
+maior divergência,Borja González Tomás,Left Center Forward,8,527,-0.0161747566668248,2287,0.3334431053264794,248,2039,7.0
+maior divergência,Maja Sternad,Left Center Forward,6,432,0.2477396592725092,67,-0.0035950410710938,1858,-1791,2.0
+maior divergência,Joshua Kimmich,Right Back,3,294,0.2035240730241968,122,-0.0396664657782554,2000,-1878,0.0
+maior divergência,Shanice van de Sanden,Right Wing,5,344,0.2258923289691473,90,-0.0453712736118685,2011,-1921,0.0
+maior divergência,Jéssica da Silva,Right Center Forward,3,271,0.416262690403732,4,-0.06352992888531,2056,-2052,0.0
+maior divergência,François Kamano,Right Wing,7,495,0.2459108334818191,69,-0.0715715609137603,2081,-2012,0.0
+maior divergência,Chanté-Mary Dompig,Right Wing,7,434,0.1727514056071492,207,-0.0746962939535776,2089,-1882,1.0
+maior divergência,Martina Fernández,Right Center Back,4,364,0.1765098744145808,192,-0.0755485751861859,2094,-1902,0.0
+maior divergência,Jessica Ziu,Right Wing,5,307,0.1817613286288521,175,-0.0812169825844011,2105,-1930,0.0
+maior divergência,Lara Prašnikar,Left Center Forward,4,335,0.1735180294429325,205,-0.1240155003902419,2179,-1974,0.0
+maior divergência,Amaiur Sarriegi,Left Wing,6,404,0.1460336022973752,332,-0.1247988988663816,2181,-1849,0.0
+referência conhecida,Lionel Andrés Messi Cuccittini,Right Wing,6,582,0.3184346405679392,12,1.0108659190988942,5,7,9.0
+referência conhecida,Gonzalo Gerardo Higuaín,Center Forward,10,855,0.1140074336552208,585,0.9475890505481858,6,579,12.0
+referência conhecida,Cristiano Ronaldo dos Santos Aveiro,Left Wing,8,724,0.1084412146318752,646,0.8534729558343743,11,635,12.0
+referência conhecida,Kylian Mbappé Lottin,Substitute,7,337,0.2160952337973452,101,0.7871300795548823,15,86,3.0
+referência conhecida,Sergio Leonel Agüero del Castillo,Center Forward,9,734,0.1703664464291753,216,0.7384422397556022,18,198,7.0
+referência conhecida,Zlatan Ibrahimović,Center Forward,8,631,0.1417554376043817,363,0.703155635343431,23,340,7.0
+referência conhecida,Francisco Román Alarcón Suárez,Substitute,6,303,0.4790073684689686,3,0.5972757915798736,37,-34,3.0
+referência conhecida,Gareth Frank Bale,Right Wing,6,488,0.1788336793151092,184,0.5275985259698622,64,120,5.0
+referência conhecida,Antoine Griezmann,Center Attacking Midfield,16,1359,0.0913788075769082,849,0.4544448429856462,103,746,10.0
+referência conhecida,Paulo Bruno Exequiel Dybala,Right Center Forward,8,648,0.1346497109578054,404,0.451112634703103,109,295,4.0
+referência conhecida,Paul Pogba,Left Center Midfield,9,847,0.1740290701253418,200,0.3420858874474047,238,-38,4.0
+referência conhecida,Toni Kroos,Left Defensive Midfield,7,624,0.1976998976640881,136,0.3137483206383554,276,-140,1.0
+referência conhecida,Neymar da Silva Santos Junior,Left Wing,4,369,0.3114625126055484,14,0.3091848605590242,287,-273,4.0
+referência conhecida,Eden Hazard,Left Wing,13,1059,0.2737017903286367,35,0.2832648439318447,336,-301,3.0
+referência conhecida,Andrés Iniesta Luján,Left Center Midfield,5,413,0.2791844168282741,30,0.2572361888911081,401,-371,0.0
+referência conhecida,Luka Modrić,Right Center Midfield,13,1194,0.1639310261651077,242,0.2295089719758483,488,-246,2.0
+referência conhecida,Sergio Busquets i Burgos,Center Defensive Midfield,5,471,0.0922918536610288,838,0.1841393552678281,652,186,0.0
+referência conhecida,Jordi Alba Ramos,Left Back,4,334,0.0956601192906868,797,0.1607840309636862,766,31,0.0
+referência conhecida,Mikel Balenziaga Oruesagasti,Left Back,11,956,0.1260317375655634,465,0.1419353082173108,862,-397,1.0
+referência conhecida,N'Golo Kanté,Right Center Midfield,12,1008,0.0963819801619086,792,0.1414087305069447,865,-73,0.0
+referência conhecida,Sergio Ramos García,Left Center Back,4,376,0.1561738160693821,290,0.1345326635364859,903,-613,0.0
+referência conhecida,Florentin Pogba,Left Center Back,9,852,0.0722045289424323,1084,0.0947332831466911,1199,-115,0.0
+referência conhecida,Gerard Moreno Balaguero,Center Forward,8,562,0.044785487064972,1555,0.0512361787690957,1526,29,3.0
+referência conhecida,Pablo Javier Zabaleta Girod,Right Back,4,382,0.0559337944942908,1342,0.01619934938642,1763,-421,0.0
+referência conhecida,Fatoumata Kanteh Cham,Right Center Forward,7,562,0.1555503004528964,292,0.0127048980528211,1786,-1494,1.0
+referência conhecida,Luis Alberto Suárez Díaz,Center Forward,5,387,0.0720015200780296,1090,-0.2893205867063432,2297,-1207,0.0
