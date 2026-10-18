@@ -65,3 +65,15 @@ def attach_xg_baseline(actions: pd.DataFrame, xg: pd.Series, players, min_minute
 def rank(df: pd.DataFrame, col: str) -> pd.Series:
     """Posto (1 = melhor) com empates pela média."""
     return df[col].rank(ascending=False, method="average")
+
+
+def shrink_by_minutes(df: pd.DataFrame, col: str, K: float) -> pd.Series:
+    """
+    Regressão à média com denominador fixo (sabermetria):
+        nota' = (m·nota + K·μ) / (m + K)
+    m = minutos do jogador; μ = média ponderada por minutos; K = minutos em
+    que nota crua e média têm peso igual. Devolve a Series encolhida.
+    """
+    m = df["minutes"].astype(float)
+    mu = float(np.average(df[col], weights=m)) if m.sum() > 0 else float(df[col].mean())
+    return (m * df[col] + K * mu) / (m + K)

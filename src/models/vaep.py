@@ -123,3 +123,48 @@ class VAEP:
 
     def flat_metrics(self) -> dict:
         return {f"vaep_{t}_{k}": v for t, d in self.metrics.items() for k, v in d.items()}
+
+
+# ======================================================================
+# Variantes para a análise de sensibilidade a hiperparâmetros (2.2.7b)
+# ======================================================================
+def params_for_n(base: dict, schedule: list, n_games: int) -> dict:
+    """Devolve os hiperparâmetros da primeira faixa da tabela em que n_games cabe."""
+    out = dict(base)
+    for row in sorted(schedule, key=lambda r: r["max_games"]):
+        if n_games <= row["max_games"]:
+            out.update({k: v for k, v in row.items() if k != "max_games"})
+            return out
+    out.update({k: v for k, v in schedule[-1].items() if k != "max_games"})
+    return out
+
+
+def select_params_cv(base: dict, candidates: list, X: pd.DataFrame, Y: pd.DataFrame,
+                     game_ids: pd.Series, n_folds: int = 3, select_by: str = "logloss") -> dict:
+    """
+    Escolhe entre as configurações candidatas por validação cruzada k-fold
+    POR PARTIDA (nunca por evento) dentro do conjunto de ajuste, usando o
+    alvo P_scores. Devolve o dicionário de hiperparâmetros vencedor.
+    """
+    from sklearn.model_selection import GroupKFold
+    games = np.asarray(game_ids)
+    k = min(n_folds, len(np.unique(games)))
+    if k < 2:                                   # poucas partidas: sem CV possível
+        return params_for_n(base, candidates, len(np.unique(games)))
+    gkf = GroupKFold(n_splits=k)
+    best, best_score = None, float("inf")
+    y = Y["scores"]
+    for row in candidates:
+        params = dict(base); params.update({kk: v for kk, v in row.items() if kk != "max_games"})
+        scores = []
+        for tr, va in gkf.split(X, y, groups=games):
+            if y.iloc[tr].nunique() < 2 or y.iloc[va].nunique() < 2:
+                continue
+            m = xgb.XGBClassifier(**params).fit(X.iloc[tr], y.iloc[tr])
+            pr = m.predict_proba(X.iloc[va])[:, 1]
+            scores.append(log_loss(y.iloc[va], pr, labels=[0, 1]) if select_by == "logloss"
+                          else brier_score_loss(y.iloc[va], pr))
+        sc = float(np.mean(scores)) if scores else float("inf")
+        if sc < best_score:
+            best, best_score = params, sc
+    return best if best is not None else params_for_n(base, candidates, len(np.unique(games)))

@@ -35,13 +35,22 @@ gen:
 cases:
 	$(PY) scripts/08_case_studies.py
 
+lookup:
+	$(PY) scripts/10_lookup_players.py --report
+
+figs:
+	$(PY) scripts/11_player_figures.py --famous
+
 cost:
 	$(PY) scripts/09_cost_report.py
+
+variants:         # opcional; --mode cv para a versão rigorosa
+	$(PY) scripts/12_stability_variants.py
 
 test:
 	$(PY) -m pytest tests -q
 
-all: download corpus xt vaep compare curves gen cases cost
+all: download corpus xt vaep compare curves gen cases lookup figs cost
 
 clean:
 	rm -rf data/processed/* outputs/models/* outputs/curves/*.jsonl

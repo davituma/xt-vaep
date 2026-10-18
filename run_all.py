@@ -42,7 +42,9 @@ STEPS = [
     ("gen",      "scripts/07_generalization.py",               "generalização entre competições, Tabela 6"),
     ("cases",    "scripts/08_case_studies.py",                 "estudos de caso, Fig. 11"),
     ("lookup",   "scripts/10_lookup_players.py --report",      "validação de construto por jogador, Tabela 8"),
+    ("figs",     "scripts/11_player_figures.py --famous",      "figuras de ações dos jogadores de referência, Fig. 12"),
     ("cost",     "scripts/09_cost_report.py",                  "Tabela 7 + ambiente"),
+    ("variants", "scripts/12_stability_variants.py",           "sensibilidade a hiperparâmetros/encolhimento, Tabela 9, Fig. 13-14 (opcional)"),
 ]
 NAMES = [s[0] for s in STEPS]
 
@@ -145,7 +147,7 @@ def main():
             names = names[: names.index(a.end) + 1]
     # discover é informativo; quick é só estimativa. Por padrão ambos pulam no
     # fluxo completo (rode explicitamente com --only se quiser).
-    default_skip = {"discover", "quick"} if not a.only else set()
+    default_skip = {"discover", "quick", "variants"} if not a.only else set()
     if a.quick:
         default_skip.discard("quick"); default_skip.add("curves")
     names = [n for n in names if n not in set(a.skip) | default_skip]

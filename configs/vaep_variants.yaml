@@ -1,0 +1,34 @@
+# ============================================================
+# Variantes do VAEP para a análise de sensibilidade (seção 2.2.7b)
+# ============================================================
+# Pergunta: a instabilidade do VAEP sob amostra pequena é intrínseca
+# ou artefato de hiperparâmetros fixos? Duas variantes testam isso.
+
+# ---- Variante 1: capacidade ajustada ao volume (vaep_reg) ----
+# Regra: menos árvores e menor profundidade com menos partidas.
+# "max_games" é o teto de cada faixa; a primeira faixa que couber é usada.
+# O princípio: a capacidade do modelo cresce com log2 do volume, evitando
+# que 200 árvores de profundidade 5 ajustem ruído em 8 partidas.
+schedule:
+  - {max_games: 16,    n_estimators: 50,  max_depth: 3, min_child_weight: 10, subsample: 0.8, colsample_bytree: 0.8}
+  - {max_games: 64,    n_estimators: 100, max_depth: 4, min_child_weight: 8,  subsample: 0.8, colsample_bytree: 0.8}
+  - {max_games: 256,   n_estimators: 150, max_depth: 4, min_child_weight: 5,  subsample: 0.8, colsample_bytree: 0.8}
+  - {max_games: 99999, n_estimators: 200, max_depth: 5, min_child_weight: 5,  subsample: 0.8, colsample_bytree: 0.8}
+
+# ---- Modo CV (opcional, mais rigoroso e mais lento) ----
+# Em vez da tabela acima, escolhe entre as configurações candidatas por
+# validação cruzada 3-fold POR PARTIDA dentro do subconjunto de ajuste,
+# selecionando pela menor log-loss média em P_scores. Ative com --mode cv.
+cv:
+  n_folds: 3
+  select_by: logloss     # logloss | brier
+
+# ---- Variante 2: encolhimento das notas por minutos (vaep_shrink) ----
+# Nota_encolhida = (m·nota + K·μ) / (m + K), com m = minutos do jogador
+# e μ = média ponderada por minutos. K é o volume em que a nota crua e a
+# média têm o mesmo peso. 450 min = 5 partidas inteiras.
+# [AJUSTAR E JUSTIFICAR] Técnica padrão de sabermetria (regressão à média
+# com denominador fixo). Aplicada por igual ao ranking reduzido e ao de
+# referência.
+shrinkage:
+  K_minutes: 450
